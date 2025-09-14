@@ -35,6 +35,8 @@ class LoginBottomSection extends StatelessWidget {
           ],
         ),
       ),
+      SizedBox(height: 29.h,),
+
     ],);
   }
 }

@@ -12,6 +12,7 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: SafeArea(
+        bottom: false,
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 47.w),
