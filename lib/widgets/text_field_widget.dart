@@ -12,6 +12,7 @@ class CustomTextField extends StatelessWidget {
     this.counterText,
      this.hintText,
     this.labelText,
+    this.subLabel,
     this.focusNode,
     required this.controller,
     this.maxLength,
@@ -26,6 +27,7 @@ class CustomTextField extends StatelessWidget {
   final Widget? prefixIcon;
   final String? hintText;
   final String? labelText;
+  final String? subLabel;
   final FocusNode? focusNode;
   final TextEditingController controller;
   final TextInputType? keyboardType;
@@ -40,13 +42,22 @@ class CustomTextField extends StatelessWidget {
     return Column(
       children: [
      if ( labelText!=null) ...[
-       Align(
-          alignment: Alignment.topLeft,
-          child: Text(
-            labelText!,
-            style: Theme.of(context).textTheme.bodyMedium,
-          ),
-        ),
+       Row(
+         children: [
+           Align(
+              alignment: Alignment.topLeft,
+              child: Text(
+                labelText!,
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+            ),
+           if(subLabel!=null)Text(
+              subLabel!,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 8.sp,color: AppColors.whiteColor.withValues(alpha: 0.5)),
+            ),
+
+         ],
+       ),
        SizedBox(height: 12.h),
      ],
         TextFormField(

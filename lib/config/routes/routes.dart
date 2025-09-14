@@ -5,12 +5,17 @@ import 'package:rhythmic_awake/view/views.dart';
 
 final GoRouter appRouter = GoRouter(
   routes: [
-
     GoRoute(
       path: RouteName.login,
       name: RouteName.login,
      builder: (context, state) => const LoginView(),
     ),
+    GoRoute(
+      path: RouteName.signup,
+      name: RouteName.signup,
+      builder: (context, state) => const SignupView(),
+    ),
+
 
 
   ],
