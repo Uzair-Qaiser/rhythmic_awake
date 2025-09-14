@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rhythmic_awake/view/recover_account/widgets/rec_ac_bottom_section.dart';
 import 'package:rhythmic_awake/view/recover_account/widgets/rec_ac_btn.dart';
 import 'package:rhythmic_awake/view/recover_account/widgets/rec_ac_form.dart';
-import 'package:rhythmic_awake/view/recover_account/widgets/rec_ac_section.dart';
+import 'package:rhythmic_awake/view/recover_account/widgets/rec_ac_top_section.dart';
 
 class RecoverAcView extends StatelessWidget {
   const RecoverAcView({super.key});
