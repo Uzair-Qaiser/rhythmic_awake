@@ -13,6 +13,7 @@ class LoginForm extends StatelessWidget {
     return    Column(
       children: [
         CustomTextField(
+          keyboardType: TextInputType.name,
           labelText: "Username",
           controller: TextEditingController(),),
         SizedBox(height: 10.h),

@@ -13,10 +13,14 @@ class SignupForm extends StatelessWidget {
     return    Column(
       children: [
         CustomTextField(
+          textCapitalization: TextCapitalization.words,
+          keyboardType: TextInputType.name,
           labelText: "First Name",
           controller: TextEditingController(),),
         SizedBox(height: 16.h),
         CustomTextField(
+          textCapitalization: TextCapitalization.words,
+          keyboardType: TextInputType.name,
           labelText: "Last Name",
           controller: TextEditingController(),),
         SizedBox(height: 16.h),
@@ -26,10 +30,12 @@ class SignupForm extends StatelessWidget {
               child: SvgPicture.asset(AppImages.calenderIcon,height: 12.h,width: 12.w,)),
           controller: TextEditingController(),),
         SizedBox(height: 16.h), CustomTextField(
+          keyboardType: TextInputType.emailAddress,
           labelText: "Email Address",
           controller: TextEditingController(),),
         SizedBox(height: 16.h),
         CustomTextField(
+          keyboardType: TextInputType.phone,
           labelText: "Phone Number",
           subLabel: " (Used for account recovery purposes)",
           controller: TextEditingController(),),

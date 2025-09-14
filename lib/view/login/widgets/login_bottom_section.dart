@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:rhythmic_awake/config/routes/route_names.dart';
 import '../../../config/theme/app_colors.dart';
 class LoginBottomSection extends StatelessWidget {
   const LoginBottomSection({super.key});
@@ -10,8 +12,15 @@ class LoginBottomSection extends StatelessWidget {
       SizedBox(height: 24.h,),
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text("Forgot Username?",style: Theme.of(context).textTheme.titleSmall,),
-          Text("Forgot Password?",style: Theme.of(context).textTheme.titleSmall,),
+          GestureDetector(
+            onTap: (){
+              context.pushNamed(RouteName.recoverAc);
+            },
+              child: Text("Forgot Username?",style: Theme.of(context).textTheme.titleSmall,)),
+          GestureDetector(onTap: (){
+            context.pushNamed(RouteName.recoverAc);
+
+          },child: Text("Forgot Password?",style: Theme.of(context).textTheme.titleSmall,)),
         ],),
       SizedBox(height: 109.h,),
       RichText(

@@ -15,8 +15,17 @@ final GoRouter appRouter = GoRouter(
       name: RouteName.signup,
       builder: (context, state) => const SignupView(),
     ),
+    GoRoute(
+      path: RouteName.recoverAc,
+      name: RouteName.recoverAc,
+      builder: (context, state) => const RecoverAcView(),
+    ),
 
-
+    GoRoute(
+      path: RouteName.otpView,
+      name: RouteName.otpView,
+      builder: (context, state) => const OtpView(),
+    ),
 
   ],
   errorBuilder: (context, state) => const Scaffold(
