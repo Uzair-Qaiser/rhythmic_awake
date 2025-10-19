@@ -74,9 +74,11 @@ class CustomTextField extends StatelessWidget {
           cursorColor: AppColors.whiteColor,
           style: Theme.of(context).textTheme.titleMedium,
           decoration: InputDecoration(
+            hintText: hintText,
+            hintStyle: Theme.of(context).textTheme.titleMedium,
             counterText: counterText,
             filled: true,
-            fillColor: AppColors.darkGrey,
+            fillColor: Color.fromRGBO(75, 79, 137, 0.55),
             contentPadding: EdgeInsets.symmetric(
               horizontal: 16.w,
               vertical: 16.h,

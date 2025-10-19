@@ -13,9 +13,9 @@ final VoidCallback onTap;
         height: 47.h,
         width: 308.w,
         decoration: BoxDecoration(
-          color: AppColors.limeGreenColor,
+          color: AppColors.darkGreen,
           borderRadius: BorderRadius.circular(16.r),),
-        child: Center(child: Text(text,style: Theme.of(context).textTheme.displayMedium!.copyWith(color: AppColors.blueColor),)),
+        child: Center(child: Text(text,style: Theme.of(context).textTheme.displayMedium)),
       ),
     );
   }

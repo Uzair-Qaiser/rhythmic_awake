@@ -23,7 +23,7 @@ class TermsCondWidget extends StatelessWidget {
                 children: [
                   TextSpan(
                       text: "terms",
-                      style: Theme.of(context).textTheme.displayMedium!.copyWith(color:AppColors.limeGreenColor,decoration: TextDecoration.underline,decorationColor: AppColors.limeGreenColor)
+                      style: Theme.of(context).textTheme.displayMedium!.copyWith(color:AppColors.darkGreen,decoration: TextDecoration.underline,decorationColor: AppColors.darkGreen)
                   ),   TextSpan(
                       text: " of Rhythmic Awakening’s Terms of Service.",
                       style: Theme.of(context).textTheme.titleSmall,

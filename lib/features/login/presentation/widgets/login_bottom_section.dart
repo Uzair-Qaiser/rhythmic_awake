@@ -31,7 +31,7 @@ class LoginBottomSection extends StatelessWidget {
           children: [
             TextSpan(
                 text: "Contact Support",
-                style: Theme.of(context).textTheme.displayMedium!.copyWith(color:AppColors.limeGreenColor,)
+                style: Theme.of(context).textTheme.displayMedium!.copyWith(color:AppColors.darkGreen,)
             ),
           ],
         ),

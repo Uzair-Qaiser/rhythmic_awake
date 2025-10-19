@@ -14,7 +14,7 @@ class AppTheme {
     ),
     textTheme:  TextTheme(
       headlineLarge: TextStyle(fontSize: 24.sp,fontWeight: FontWeight.w700,color:  AppColors.whiteColor),
-      headlineMedium: TextStyle(fontSize: 24.sp,fontWeight: FontWeight.w600,color:  AppColors.whiteColor),
+      headlineMedium: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.w700,color:  AppColors.whiteColor),
       headlineSmall: TextStyle(fontSize: 23.sp,fontWeight: FontWeight.w600,color:  AppColors.whiteColor),
       bodyLarge: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w300,color:  AppColors.whiteColor),
       bodyMedium: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w200,color:  AppColors.whiteColor),
@@ -23,6 +23,8 @@ class AppTheme {
       titleMedium: TextStyle(fontSize: 12.sp,fontWeight: FontWeight.w400,color:  AppColors.whiteColor),
       titleSmall: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w400,color:  AppColors.whiteColor),
       displayMedium: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w500,color:  AppColors.whiteColor),
+      displayLarge: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600,color:  AppColors.whiteColor),
+      displaySmall: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w600,color:  AppColors.whiteColor),
     ),
   );
   // Dark Theme
