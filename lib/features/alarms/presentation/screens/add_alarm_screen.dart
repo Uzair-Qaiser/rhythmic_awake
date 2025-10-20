@@ -33,6 +33,7 @@ class AddAlarmScreen extends StatelessWidget {
               SizedBox(height: 57.h),
               Container(
                 height: 181.h,
+                padding: EdgeInsets.symmetric(horizontal:30.w),
                 decoration: BoxDecoration(color: AppColors.transparentColor,borderRadius: BorderRadius.circular(16.r)),
                 child:   CupertinoTheme(
                     data: CupertinoThemeData(

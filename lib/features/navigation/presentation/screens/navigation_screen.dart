@@ -7,6 +7,8 @@ import 'package:rhythmic_awake/features/alarms/presentation/screens/alarm_screen
 import 'package:rhythmic_awake/features/playlist/presentation/screens/playlist_screen.dart';
 import 'package:rhythmic_awake/features/profile/presentation/screens/profile_screen.dart';
 
+import '../../../timer/presentation/screens/timer_screen.dart';
+
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({super.key});
 
@@ -18,7 +20,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   final List<Widget>_screens=[
     AlarmScreen(),
     PlaylistScreen(),
-    PlaylistScreen(),
+    TimerScreen(),
     PlaylistScreen(),
     ProfileScreen(),
 
