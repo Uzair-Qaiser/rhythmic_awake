@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import '../../../../core/constants/app_images.dart';
 import '../../../../core/theme/app_colors.dart';
 class AlarmCard extends StatelessWidget {
   const AlarmCard({super.key, required this.bgImg, required this.songImg});
@@ -18,7 +19,7 @@ final String songImg;
             Container(
               height: 193.h,
               width: ScreenUtil().screenWidth,
-              color: Color.fromRGBO(75, 79, 137, 0.55),
+              color: AppColors.transparentColor,
             ),
             Positioned(
               right: 0,
@@ -131,7 +132,13 @@ final String songImg;
                               context,
                             ).textTheme.titleMedium,
                           ),
-                        ],)
+                        ],),
+                      const Spacer(),
+                      Row(children: [
+                        SvgPicture.asset(AppImages.octagon,height: 16.h,width: 16.w,fit: BoxFit.cover,),
+                        SizedBox(width: 12.w,),
+                        SvgPicture.asset(AppImages.edit,height: 16.h,width: 16.w,fit: BoxFit.cover,),
+                      ],)
                     ],),
                   )
                 ],

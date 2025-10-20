@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:rhythmic_awake/core/constants/app_images.dart';
+import 'package:rhythmic_awake/features/alarms/routes/alarm_routes.dart';
 import '../../../../shared/widgets/small_btn.dart';
 import '../widgets/alarm_card.dart';
 
@@ -60,7 +62,9 @@ class AlarmScreen extends StatelessWidget {
                     "Alarms",
                     style: Theme.of(context).textTheme.headlineLarge,
                   ),
-                  SmallBtn(func: () {}, text: 'New Alarm'),
+                  SmallBtn(func: () {
+                    context.pushNamed(AlarmRoutes.addAlarm);
+                  }, text: 'New Alarm'),
                 ],
               ),
               SizedBox(height: 24.h),

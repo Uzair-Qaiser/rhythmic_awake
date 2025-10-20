@@ -12,6 +12,7 @@ sealed class AppImages{
   static const appleCol="assets/images/shared/apple.svg";
   static const itunes="assets/images/shared/itunes.svg";
   static const yt="assets/images/shared/yt.svg";
+  static const pandora="assets/images/shared/pandora_col.svg";
 
   //NAVBAR
 static const selAlarm="assets/images/shared/sel_alarm.svg";
@@ -29,6 +30,10 @@ static const unSelAlarm="assets/images/shared/un_alarm-clock.svg";
   static const alarmNotification="assets/images/features/alarm/notification-favorite.svg";
   static const spotify="assets/images/features/alarm/spotify.svg";
   static const apple="assets/images/features/alarm/apple-music.svg";
+  static const musicFilter="assets/images/features/alarm/music-filter.svg";
+  static const musicPlaylist="assets/images/features/alarm/music-playlist.svg";
+  static const octagon="assets/images/features/alarm/octagon.svg";
+  static const edit="assets/images/features/alarm/edit.svg";
 
   //Profile
   static const logout="assets/images/features/profile/logout.svg";
