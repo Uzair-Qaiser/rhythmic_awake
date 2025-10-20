@@ -19,14 +19,14 @@ class LoginForm extends StatelessWidget {
         SizedBox(height: 10.h),
         Row(
           children: [
-            Flexible(
-              child: Text(
-                "Initial Username will be product barcode. See product barcode displayed on the outside of rhythmic awakening’s speaker system box for access to this app",
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-            ),
-            SizedBox(width: 16.w,),
-            SizedBox(height:21.h,child: VerticalDivider(color: AppColors.greyColor,)),
+            Flexible(child: RichText(text: TextSpan(text: 'Initial Username will be product barcode. See product barcode displayed on the outside of',style: Theme.of(context).textTheme.bodySmall,
+                children: [
+                  TextSpan(text: 'rhythmic awakening’s speaker system',style: Theme.of(context).textTheme.bodySmall?.copyWith(color: AppColors.darkGreen,decoration: TextDecoration.underline,decorationColor: AppColors.darkGreen),),
+               TextSpan(text: ' box for access to this app')
+                ]),)),
+
+            SizedBox(width: 8.w,),
+            SizedBox(height:21.h,child: VerticalDivider(color: AppColors.transparentColor,width: 0,)),
             SizedBox(width: 16.w,),
             Container(height: 28.h,width: 28.w,
               padding: EdgeInsets.all(6.sp),

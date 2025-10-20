@@ -2,7 +2,7 @@ import 'package:go_router/go_router.dart';
 import '../presentation/screens/navigation_screen.dart';
 
 class NavigationRoutes {
-  static const String navigationScreen = '/';
+  static const String navigationScreen = '/navigationScreen';
   static List<GoRoute> getRoutes() {
     return [
       GoRoute(
