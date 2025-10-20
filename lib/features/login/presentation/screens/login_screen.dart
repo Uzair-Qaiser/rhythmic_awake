@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../shared/widgets/app_bg.dart';
 import '../widgets/login_bottom_section.dart';
 import '../widgets/login_btn.dart';
 import '../widgets/login_form.dart';
@@ -11,20 +12,22 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: SafeArea(
-        bottom: false,
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 47.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                LoginTopSection(),
-                LoginForm(),
-                LoginBtn(),
-                LoginBottomSection(),
-              ],
+    return Scaffold(
+      body: AppBackground(
+        child: SafeArea(
+          bottom: false,
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 47.w),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  LoginTopSection(),
+                  LoginForm(),
+                  LoginBtn(),
+                  LoginBottomSection(),
+                ],
+              ),
             ),
           ),
         ),

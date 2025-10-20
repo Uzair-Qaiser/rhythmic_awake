@@ -40,4 +40,13 @@ static const unSelAlarm="assets/images/shared/un_alarm-clock.svg";
   static const logout="assets/images/features/profile/logout.svg";
   static const user="assets/images/features/profile/Avatar.png";
 
+  //Calendar
+  static const arrowLeft="assets/images/features/calendar/arrow-square-left.svg";
+  static const arrowRight="assets/images/features/calendar/arrow-square-right.svg";
+
+  //Todo_
+  static const uploadTodo="assets/images/features/todo/up_todo.svg";
+  static const undoArrow="assets/images/features/todo/undo_arrow.svg";
+  static const redoArrow="assets/images/features/todo/redo_arrow.svg";
+
 }

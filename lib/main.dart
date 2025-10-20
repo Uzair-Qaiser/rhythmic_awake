@@ -25,20 +25,7 @@ class MyApp extends StatelessWidget {
             routerConfig: appRouter,
             debugShowCheckedModeBanner: false,
             theme: AppTheme.lightTheme,
-            builder: (context, child) {
-              return Stack(
-                fit: StackFit.expand,
-                children: [
-                  Image.asset(
-                    AppImages.bgImage,
-                    fit: BoxFit.cover,
-                    gaplessPlayback: true,
-                    filterQuality: FilterQuality.low,
-                  ),
-                  child ?? const SizedBox.shrink(),
-                ],
-              );
-            },
+        
           );
         },
       ),

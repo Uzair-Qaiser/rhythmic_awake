@@ -7,8 +7,8 @@ class AppTheme {
     appBarTheme: AppBarTheme(scrolledUnderElevation: 0),
     fontFamily: 'PlusJakartaSans',
     primaryColor: AppColors.blueColor,
-    scaffoldBackgroundColor: Colors.transparent,
-    canvasColor: Colors.transparent,
+   scaffoldBackgroundColor: Colors.white,
+  canvasColor: Colors.transparent,
     colorScheme: ColorScheme.fromSwatch().copyWith(
       primary: AppColors.blueColor,
     ),

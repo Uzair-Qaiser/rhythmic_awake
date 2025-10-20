@@ -69,6 +69,8 @@ flutter:
     - assets/images/features/alarm/
     - assets/images/features/profile/
     - assets/images/features/timer/
+    - assets/images/features/calendar/
+    - assets/images/features/todo/
     - assets/icons/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

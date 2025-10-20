@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rhythmic_awake/shared/widgets/app_bg.dart';
 
 import '../widgets/signup_bottom_section.dart';
 import '../widgets/signup_btn.dart';
@@ -12,21 +13,23 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: SafeArea(
-        bottom: false,
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 47.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SignupTopSection(),
-                SignupForm(),
-                TermsCondWidget(),
-                SignupBtn(),
-                SizedBox(height: 35.h,)
-              ],
+    return Scaffold(
+      body: AppBackground(
+        child: SafeArea(
+          bottom: false,
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 47.w),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SignupTopSection(),
+                  SignupForm(),
+                  TermsCondWidget(),
+                  SignupBtn(),
+                  SizedBox(height: 35.h,)
+                ],
+              ),
             ),
           ),
         ),
