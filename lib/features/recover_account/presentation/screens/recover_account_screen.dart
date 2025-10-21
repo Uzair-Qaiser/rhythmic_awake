@@ -14,17 +14,33 @@ class RecoverAcScreen extends StatelessWidget {
     return Scaffold(
       body: AppBackground(
         child: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 47.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                RecoverAcTopSection(),
-                RecoverAcForm(),
-                const Spacer(),
-                RecoverAcBottomSection(),
-                RecoverAcBtn(),
-              ],
+          child: SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minHeight: MediaQuery.of(context).size.height -
+                    MediaQuery.of(context).padding.top -
+                    MediaQuery.of(context).padding.bottom,
+              ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 47.w,vertical: 8.h),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Column(children: [
+                      RecoverAcTopSection(),
+                      RecoverAcForm(),
+                    ],),
+
+                 Column(
+                   children: [
+                   RecoverAcBottomSection(),
+                   RecoverAcBtn(),
+                 ],)
+                  ],
+                ),
+              ),
             ),
           ),
         ),

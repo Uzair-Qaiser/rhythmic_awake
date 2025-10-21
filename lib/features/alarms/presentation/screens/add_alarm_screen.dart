@@ -27,13 +27,13 @@ class AddAlarmScreen extends StatelessWidget {
       ),
       body: AppBackground(
         child: SafeArea(
+          bottom: false,
           child: Padding(
             padding:  EdgeInsets.symmetric(horizontal: 24.w),
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-          
                   SizedBox(height: 57.h),
                   Container(
                     height: 181.h,
@@ -116,7 +116,8 @@ class AddAlarmScreen extends StatelessWidget {
                   CustomBtn(
                     height:50.h,
                       width: ScreenUtil().screenWidth,
-                      text: "Create Alarm", onTap: (){})
+                      text: "Create Alarm", onTap: (){}),
+                  SizedBox(height: 5.h,),
                 ],
               ),
             ),
