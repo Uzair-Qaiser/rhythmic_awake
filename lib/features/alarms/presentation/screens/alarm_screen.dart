@@ -9,8 +9,15 @@ import '../../../../shared/widgets/app_bg.dart';
 import '../../../../shared/widgets/small_btn.dart';
 import '../../../../shared/widgets/alarm_card.dart';
 
-class AlarmScreen extends StatelessWidget {
+class AlarmScreen extends StatefulWidget {
   const AlarmScreen({super.key});
+
+  @override
+  State<AlarmScreen> createState() => _AlarmScreenState();
+}
+
+class _AlarmScreenState extends State<AlarmScreen> {
+  List<bool> alarmStates = [true, true, false, true];
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +50,7 @@ class AlarmScreen extends StatelessWidget {
                         ),
                         SizedBox(height: 4.h),
                         Text(
-                          'Don’t miss anything by reminder',
+                          'Don\'t Miss Anything By Reminder',
                           style: Theme.of(context).textTheme.displaySmall,
                         ),
                       ],
@@ -64,16 +71,55 @@ class AlarmScreen extends StatelessWidget {
                       "Alarms",
                       style: Theme.of(context).textTheme.headlineLarge,
                     ),
-                    SmallBtn(func: () {
-                      context.pushNamed(AlarmRoutes.addAlarm);
-                    }, text: 'New Alarm'),
+                    SmallBtn(
+                      func: () {
+                        context.pushNamed(AlarmRoutes.addAlarm);
+                      },
+                      text: 'New Alarm',
+                    ),
                   ],
                 ),
                 SizedBox(height: 24.h),
-                AlarmCard(bgImg: AppImages.spotify, songImg: AppImages.spotifyCol,),
-                AlarmCard(bgImg: AppImages.apple, songImg: AppImages.appleCol,),
-                AlarmCard(bgImg: AppImages.spotify, songImg: AppImages.spotifyCol,),
-                AlarmCard(bgImg: AppImages.spotify, songImg: AppImages.spotifyCol,),
+                AlarmCard(
+                  bgImg: AppImages.spotify,
+                  songImg: AppImages.spotifyCol,
+                  isEnabled: alarmStates[0],
+                  onToggle: (value) {
+                    setState(() {
+                      alarmStates[0] = value;
+                    });
+                  },
+                ),
+                AlarmCard(
+                  bgImg: AppImages.apple,
+                  songImg: AppImages.appleCol,
+                  isEnabled: alarmStates[1],
+                  onToggle: (value) {
+                    setState(() {
+                      alarmStates[1] = value;
+                    });
+                  },
+                ),
+                AlarmCard(
+                  bgImg: AppImages.spotify,
+                  songImg: AppImages.spotifyCol,
+                  isEnabled: alarmStates[2],
+                  onToggle: (value) {
+                    setState(() {
+                      alarmStates[2] = value;
+                    });
+                  },
+                ),
+                AlarmCard(
+                  bgImg: AppImages.spotify,
+                  songImg: AppImages.spotifyCol,
+                  isEnabled: alarmStates[3],
+                  onToggle: (value) {
+                    setState(() {
+                      alarmStates[3] = value;
+                    });
+                  },
+                ),
               ],
             ),
           ),

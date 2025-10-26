@@ -25,7 +25,7 @@ class LoginTopSection extends StatelessWidget {
       ),
       SizedBox(height: 16.h),
       Text(
-        "Let’s create a new life habit, and potentially improve your life’s productivity trajectory.",
+        "Access your account and embark on the exciting functionalities and features of our app.",
         style: Theme.of(context).textTheme.bodyLarge,
         textAlign: TextAlign.center,
       ),

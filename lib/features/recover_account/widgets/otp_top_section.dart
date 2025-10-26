@@ -26,7 +26,7 @@ class OtpTopSection extends StatelessWidget {
       ),
       SizedBox(height: 16.h),
       Text(
-        "Please input code sent to your email: www.samplemail@gmail.com",
+        "Please input code sent to your email: samplemail@gmail.com",
         style: Theme.of(context).textTheme.bodyLarge,
         textAlign: TextAlign.center,
       ),

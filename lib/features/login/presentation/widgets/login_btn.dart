@@ -8,7 +8,7 @@ class LoginBtn extends StatelessWidget {
   const LoginBtn({super.key});
   @override
   Widget build(BuildContext context) {
-    return CustomBtn(text: 'Get Started', onTap: () {
+    return CustomBtn(text: 'Log In', onTap: () {
       context.goNamed(NavigationRoutes.navigationScreen);
     },);
   }

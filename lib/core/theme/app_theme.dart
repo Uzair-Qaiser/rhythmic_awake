@@ -6,11 +6,11 @@ class AppTheme {
   static final ThemeData lightTheme = ThemeData(
     appBarTheme: AppBarTheme(scrolledUnderElevation: 0),
     fontFamily: 'PlusJakartaSans',
-    primaryColor: AppColors.blueColor,
+    primaryColor: AppColors.darkGreen,
    scaffoldBackgroundColor: Colors.white,
   canvasColor: Colors.transparent,
     colorScheme: ColorScheme.fromSwatch().copyWith(
-      primary: AppColors.blueColor,
+      primary: AppColors.darkGreen,
     ),
     textTheme:  TextTheme(
       headlineLarge: TextStyle(fontSize: 24.sp,fontWeight: FontWeight.w700,color:  AppColors.whiteColor),

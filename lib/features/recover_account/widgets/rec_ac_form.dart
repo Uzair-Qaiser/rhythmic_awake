@@ -18,7 +18,7 @@ class RecoverAcForm extends StatelessWidget {
                 height: 29.h,
                 width: 70.w,
                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.r),
-                    color: AppColors.darkGreen),
+                    color: Theme.of(context).primaryColor),
                 child: Center(child: Text("Send Code",style: Theme.of(context).textTheme.titleSmall,),),)),
         ),
         SizedBox(height: 24.h),

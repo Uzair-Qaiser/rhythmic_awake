@@ -36,19 +36,23 @@ void  _changeIndex(int index){
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       bottomNavigationBar: Container(
         height: 78.h,
         width: ScreenUtil().screenWidth,
+      decoration: BoxDecoration(
         color: AppColors.blueColor,
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(24.r),topRight: Radius.circular(24.r))
+      ),
       padding: EdgeInsets.symmetric(horizontal: 24.w,vertical: 14.h),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        spacing: 24.w,
+
         children: [
-     _navItem(context: context, text: 'Alarms', selIcon: _selectedIndex==0?AppImages.selAlarm:AppImages.unSelAlarm,unSelIcon: AppImages.unSelAlarm, func: () { _changeIndex(0); }),
-     _navItem(context: context, text: 'Playlist',selIcon: _selectedIndex==1?AppImages.selPlaylist:AppImages.unPlayList,unSelIcon: AppImages.unPlayList,func: () { _changeIndex(1); }),
-     _navItem(context: context, text: 'Timer', selIcon: _selectedIndex==2?AppImages.selTimer:AppImages.unSelTimer,unSelIcon: AppImages.unSelTimer,func: () { _changeIndex(2); }),
-     _navItem(context: context, text: 'Calendar', selIcon: _selectedIndex==3?AppImages.selCalendar:AppImages.unSelCalendar,unSelIcon: AppImages.unSelCalendar,func: () { _changeIndex(3); }),
-     _navItem(context: context, text: 'Profile', selIcon: _selectedIndex==4?AppImages.selProfile:AppImages.unProfile,unSelIcon: AppImages.unProfile,func: () { _changeIndex(4); }),
+     Expanded(child: _navItem(context: context, text: 'Alarms', selIcon: _selectedIndex==0?AppImages.selAlarm:AppImages.unSelAlarm,unSelIcon: AppImages.unSelAlarm, func: () { _changeIndex(0); })),
+     Expanded(child: _navItem(context: context, text: 'Playlist',selIcon: _selectedIndex==1?AppImages.selPlaylist:AppImages.unPlayList,unSelIcon: AppImages.unPlayList,func: () { _changeIndex(1); })),
+     Expanded(child: _navItem(context: context, text: 'Timer', selIcon: _selectedIndex==2?AppImages.selTimer:AppImages.unSelTimer,unSelIcon: AppImages.unSelTimer,func: () { _changeIndex(2); })),
+     Expanded(child: _navItem(context: context, text: 'Calendar', selIcon: _selectedIndex==3?AppImages.selCalendar:AppImages.unSelCalendar,unSelIcon: AppImages.unSelCalendar,func: () { _changeIndex(3); })),
+     Expanded(child: _navItem(context: context, text: 'Profile', selIcon: _selectedIndex==4?AppImages.selProfile:AppImages.unProfile,unSelIcon: AppImages.unProfile,func: () { _changeIndex(4); })),
       ],),),
       body:IndexedStack(index: _selectedIndex, children: _screens)
     );
@@ -56,12 +60,16 @@ void  _changeIndex(int index){
 
   Widget _navItem({required BuildContext context,required String text,required String selIcon,required String unSelIcon,required VoidCallback func}){
     return   GestureDetector(
+      behavior: HitTestBehavior.opaque,
       onTap:func,
-      child: Column(children: [
-        SvgPicture.asset(selIcon,height: 22.h,width: 22.h,),
-        SizedBox(height: 6.h,),
-        Text(text,style: Theme.of(context).textTheme.titleSmall),
-      ],),
+      child: Container( width: double.infinity,
+        height: double.infinity,
+        child: Column(children: [
+          SvgPicture.asset(selIcon,height: 22.h,width: 22.h,),
+          SizedBox(height: 6.h,),
+          Text(text,style: Theme.of(context).textTheme.titleSmall),
+        ],),
+      ),
     );
   }
 }

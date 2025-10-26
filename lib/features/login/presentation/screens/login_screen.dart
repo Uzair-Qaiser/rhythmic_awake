@@ -18,11 +18,12 @@ class LoginScreen extends StatelessWidget {
           bottom: false,
           child: SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 47.w),
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  LoginTopSection(),
+                  Padding(padding: EdgeInsets.symmetric(horizontal: 23.w),
+                      child: LoginTopSection()),
                   LoginForm(),
                   LoginBtn(),
                   LoginBottomSection(),

@@ -29,7 +29,7 @@ class OtpInputWidget extends StatelessWidget {
           textStyle: Theme.of(context).textTheme.titleLarge,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16.r),
-            color: AppColors.darkGrey,
+            color: AppColors.transparentColor,
           ),
         ),
         focusedPinTheme: PinTheme(
@@ -39,7 +39,7 @@ class OtpInputWidget extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border.all(color: AppColors.whiteColor),
             borderRadius: BorderRadius.circular(16.r),
-            color: AppColors.darkGrey,
+            color: AppColors.transparentColor,
           ),
         ),
       ),

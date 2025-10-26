@@ -95,23 +95,22 @@ class AddAlarmScreen extends StatelessWidget {
                         Text('Stored Audio Files',style: Theme.of(context).textTheme.titleMedium,)
                       ],),),
                   SizedBox(height: 34.h,),
-                  ListTile(minTileHeight: 0,
-                    minVerticalPadding: 0,
-                    minLeadingWidth: 0,
-                    horizontalTitleGap: 12.w,
-                    leading: Icon(Icons.check_box_outline_blank,color: Colors.white,size: 15.sp,),
-                  title: Text('Add Countdown Feature. After alarm song plays, a 10 second count down will be activated',style: Theme.of(context).textTheme.titleSmall,),
-                 trailing:SvgPicture.asset(AppImages.octagon,height: 16.h,width: 16.w,fit: BoxFit.cover,),
-          
-                  ),
+
+                  Row(spacing: 8.w,
+                    children: [
+                    Icon(Icons.check_box_outline_blank,color: AppColors.greyColor2,size: 15.sp,),
+                    Expanded(child: Text('Add Countdown Feature. After alarm song plays, a 10 second count down will be activated',style: Theme.of(context).textTheme.titleSmall?.copyWith(color: AppColors.greyColor2),)),
+
+                    SvgPicture.asset(AppImages.octagon,height: 16.h,width: 16.w,fit: BoxFit.cover,),
+                  ],),
+
                   SizedBox(height: 24.h,),
-                  ListTile(minTileHeight: 0,
-                    minVerticalPadding: 0,
-                    minLeadingWidth: 0,
-                    horizontalTitleGap: 12.w,
-                    leading: Icon(Icons.check_box_outline_blank,color: Colors.white,size: 15.sp,),
-                  title: Text('Add Daily Calendar To Do List Reading Assistant (Assistant reads to do list prior to starting song.)',style: Theme.of(context).textTheme.titleSmall,),
-                 ),
+                  Row(spacing: 8.w,
+                    children: [
+                    Icon(Icons.check_box_outline_blank,color: AppColors.greyColor2,size: 15.sp,),
+                    Flexible(child: Text('Add Daily Calendar To Do List Reading Assistant (Assistant reads to do list prior to starting song.)',style: Theme.of(context).textTheme.titleSmall?.copyWith(color: AppColors.greyColor2),)),
+                  ],),
+
                   SizedBox(height: 47.h,),
                   CustomBtn(
                     height:50.h,

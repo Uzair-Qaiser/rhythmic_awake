@@ -13,9 +13,9 @@ final double? height;
       onTap:onTap,
       child: Container(
         height: height??47.h,
-        width: width??308.w,
+        width: width??ScreenUtil().screenWidth,
         decoration: BoxDecoration(
-          color: AppColors.darkGreen,
+          color: Theme.of(context).primaryColor,
           borderRadius: BorderRadius.circular(16.r),),
         child: Center(child: Text(text,style: Theme.of(context).textTheme.displayMedium)),
       ),

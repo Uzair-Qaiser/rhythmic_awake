@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../core/theme/app_colors.dart';
 class SmallBtn extends StatelessWidget {
   const SmallBtn({super.key, required this.func, required this.text});
 final VoidCallback func;
@@ -12,7 +11,7 @@ final String text;
       child: Container(
       padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 8.h),
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.r),
-            color: AppColors.darkGreen),
+            color: Theme.of(context).primaryColor),
         child: Center(child: Text(text,style: Theme.of(context).textTheme.titleSmall,),),),
     );
   }

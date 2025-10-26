@@ -5,9 +5,23 @@ import '../../../../core/constants/app_images.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../shared/widgets/text_field_widget.dart';
 
-class LoginForm extends StatelessWidget {
+class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
 
+  @override
+  State<LoginForm> createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+  final passController=TextEditingController();
+  final emailController=TextEditingController();
+   bool _obs=true;
+ void _togglePass(){
+    _obs=!_obs;
+    setState(() {
+
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return    Column(
@@ -15,13 +29,13 @@ class LoginForm extends StatelessWidget {
         CustomTextField(
           keyboardType: TextInputType.name,
           labelText: "Username",
-          controller: TextEditingController(),),
+          controller: emailController),
         SizedBox(height: 10.h),
         Row(
           children: [
             Flexible(child: RichText(text: TextSpan(text: 'Initial Username will be product barcode. See product barcode displayed on the outside of',style: Theme.of(context).textTheme.bodySmall,
                 children: [
-                  TextSpan(text: 'rhythmic awakening’s speaker system',style: Theme.of(context).textTheme.bodySmall?.copyWith(color: AppColors.darkGreen,decoration: TextDecoration.underline,decorationColor: AppColors.darkGreen),),
+                  TextSpan(text: 'rhythmic awakening’s speaker system',style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Theme.of(context).primaryColor,decoration: TextDecoration.underline,decorationColor: AppColors.darkGreen),),
                TextSpan(text: ' box for access to this app')
                 ]),)),
 
@@ -42,10 +56,10 @@ class LoginForm extends StatelessWidget {
         SizedBox(height: 26.h,),
 
         CustomTextField(
-          obs: true,
+          obs: _obs,
           labelText: "Password",
           suffixIcon: Padding(padding: EdgeInsets.symmetric(horizontal: 16,vertical: 16),
-              child: SvgPicture.asset(AppImages.hiddenIcon,height: 12.h,width: 12.w,)), hintText: '', controller: TextEditingController(),
+              child: GestureDetector(onTap: (){_togglePass();},child: SvgPicture.asset(AppImages.hiddenIcon,height: 12.h,width: 12.w,))), hintText: '', controller: passController,
         ),
         SizedBox(height: 24.h,),
 

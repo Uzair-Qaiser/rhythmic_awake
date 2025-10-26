@@ -27,7 +27,7 @@ static const unSelAlarm="assets/images/shared/un_alarm-clock.svg";
   static const selPlaylist="assets/images/shared/sel_list-music.svg";
 
   //Alarm Screen
-  static const alarmNotification="assets/images/features/alarm/notification-favorite.svg";
+  static const alarmNotification="assets/images/features/alarm/notification-status.svg";
   static const spotify="assets/images/features/alarm/spotify.svg";
   static const apple="assets/images/features/alarm/apple-music.svg";
   static const musicFilter="assets/images/features/alarm/music-filter.svg";
@@ -39,6 +39,7 @@ static const unSelAlarm="assets/images/shared/un_alarm-clock.svg";
   //Profile
   static const logout="assets/images/features/profile/logout.svg";
   static const user="assets/images/features/profile/Avatar.png";
+  static const editProfile="assets/images/features/profile/edit_profile.svg";
 
   //Calendar
   static const arrowLeft="assets/images/features/calendar/arrow-square-left.svg";

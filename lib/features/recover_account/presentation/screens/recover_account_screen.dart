@@ -22,7 +22,7 @@ class RecoverAcScreen extends StatelessWidget {
                     MediaQuery.of(context).padding.bottom,
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 47.w,vertical: 8.h),
+                padding: EdgeInsets.symmetric(horizontal: 24.w,vertical: 8.h),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -36,7 +36,7 @@ class RecoverAcScreen extends StatelessWidget {
                  Column(
                    children: [
                    RecoverAcBottomSection(),
-                   RecoverAcBtn(),
+                   RecoverAcBtn(text: 'Continue',),
                  ],)
                   ],
                 ),
