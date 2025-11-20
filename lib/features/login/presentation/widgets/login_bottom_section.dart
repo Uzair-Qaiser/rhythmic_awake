@@ -17,11 +17,11 @@ class LoginBottomSection extends StatelessWidget {
             onTap: (){
               context.pushNamed(RecoverAcRoutes.recoverAccount);
             },
-              child: Text("Forgot Username?",style: Theme.of(context).textTheme.titleSmall,)),
+              child: Text("Forgot Username?",style: Theme.of(context).textTheme.titleMedium,)),
           GestureDetector(onTap: (){
             context.pushNamed(RecoverAcRoutes.recoverAccount);
 
-          },child: Text("Forgot Password?",style: Theme.of(context).textTheme.titleSmall,)),
+          },child: Text("Forgot Password?",style: Theme.of(context).textTheme.titleMedium,)),
         ],),
       SizedBox(height: 109.h,),
       RichText(

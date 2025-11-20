@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OutlinedBtn extends StatelessWidget {
-  const OutlinedBtn({super.key, required this.text, required this.onTap, this.width, this.height});
+  const OutlinedBtn({super.key, required this.text, required this.onTap, this.width, this.height, this.widget});
   final String text;
   final VoidCallback onTap;
   final double? width;
   final double? height;
+  final Widget? widget;
   @override
   Widget build(BuildContext context) {
     return   GestureDetector(
@@ -17,7 +18,7 @@ class OutlinedBtn extends StatelessWidget {
         decoration: BoxDecoration(
           border: Border.all(color: Colors.white),
           borderRadius: BorderRadius.circular(16.r),),
-        child: Center(child: Text(text,style: Theme.of(context).textTheme.displayMedium)),
+        child: Center(child: widget??Text(text,style: Theme.of(context).textTheme.displayMedium)),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:rhythmic_awake/core/constants/app_images.dart';
 import 'package:rhythmic_awake/core/theme/app_colors.dart';
 import 'package:rhythmic_awake/features/timer/presentation/widgets/timer_bar_widget.dart';
@@ -19,7 +20,7 @@ class TimerScreen extends StatelessWidget {
     return Scaffold(
       body: AppBackground(
         child: SafeArea(
-          bottom: false,
+
           child: Padding(
             padding:  EdgeInsets.symmetric(horizontal: 24.w),
             child: SingleChildScrollView(
@@ -56,8 +57,10 @@ class TimerScreen extends StatelessWidget {
                         SongBarWidget(),
                         SizedBox(height: 21.h,),
                         Row( mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          spacing: 16.w,
                           children: [
-                            OutlinedBtn(text: 'Cancel', onTap: () {  },),
+                            Expanded(child: OutlinedBtn(text: 'Cancel', onTap: () {  },)),
+                            OutlinedBtn(width: 47.w,text: '',widget: SvgPicture.asset(AppImages.refreshIcon,height: 24.h,width: 24.w,fit: BoxFit.cover,), onTap: () {  },),
                           CustomBtn(
                             width: 129.w,
                               text: "Start", onTap: (){})

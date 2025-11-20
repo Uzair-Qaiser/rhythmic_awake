@@ -19,7 +19,7 @@ class CustomTextField extends StatelessWidget {
     this.maxLength,
     this.validator,
     this.keyboardType,
-    this.onChanged,  this.textCapitalization=TextCapitalization.none,
+    this.onChanged,  this.textCapitalization=TextCapitalization.sentences,
   });
 
   final Widget? suffixIcon;
@@ -49,7 +49,7 @@ class CustomTextField extends StatelessWidget {
               alignment: Alignment.topLeft,
               child: Text(
                 labelText!,
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
             ),
            if(subLabel!=null)Text(
@@ -67,7 +67,7 @@ class CustomTextField extends StatelessWidget {
           maxLines: maxLines,
           validator: validator,
           focusNode: focusNode,
-          keyboardType: keyboardType,
+          keyboardType: keyboardType??TextInputType.text,
           obscureText: obs,
           controller: controller,
           onChanged: onChanged,

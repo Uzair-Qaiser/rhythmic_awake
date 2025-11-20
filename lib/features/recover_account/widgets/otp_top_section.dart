@@ -14,20 +14,19 @@ class OtpTopSection extends StatelessWidget {
     return Column(children: [
       SvgPicture.asset(AppImages.appIcon, width: 100.w, height: 92.h),
       SizedBox(height: 22.h),
-      GradientText(
+      Text(
         'Recover Your Account',
-        style: Theme.of(context).textTheme.headlineLarge!,
-        gradient: LinearGradient(
-          colors: [AppColors.whiteColor, AppColors.blueColor2],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          stops: [0.28, 1],
-        ),
+        style: Theme.of(context).textTheme.headlineLarge
       ),
       SizedBox(height: 16.h),
       Text(
-        "Please input code sent to your email: samplemail@gmail.com",
+        "Please input code sent to your email:",
         style: Theme.of(context).textTheme.bodyLarge,
+        textAlign: TextAlign.center,
+      ),
+      Text(
+        "samplemail@gmail.com",
+        style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontSize: 13.sp),
         textAlign: TextAlign.center,
       ),
       SizedBox(height: 66.h),

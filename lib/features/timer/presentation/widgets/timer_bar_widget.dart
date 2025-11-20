@@ -33,7 +33,10 @@ final String platformIcon;
             ),
           ],),
         const Spacer(),
-        SvgPicture.asset(AppImages.videoSquare,height: 16.h,width: 16.w,fit: BoxFit.cover,),
+        SvgPicture.asset(AppImages.refreshIcon,height: 24.h,width: 24.w,fit: BoxFit.cover,),
+        SizedBox(width: 7.w,),
+        SvgPicture.asset(AppImages.videoSquare,height: 24.h,width: 24.w,fit: BoxFit.cover,),
+
       ],),);
   }
 }

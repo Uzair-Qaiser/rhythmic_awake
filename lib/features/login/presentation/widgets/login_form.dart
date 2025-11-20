@@ -33,9 +33,9 @@ class _LoginFormState extends State<LoginForm> {
         SizedBox(height: 10.h),
         Row(
           children: [
-            Flexible(child: RichText(text: TextSpan(text: 'Initial Username will be product barcode. See product barcode displayed on the outside of',style: Theme.of(context).textTheme.bodySmall,
+            Flexible(child: RichText(text: TextSpan(text: 'Initial Username will be product barcode. See product barcode displayed on the outside of',style: Theme.of(context).textTheme.bodyMedium,
                 children: [
-                  TextSpan(text: 'rhythmic awakening’s speaker system',style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Theme.of(context).primaryColor,decoration: TextDecoration.underline,decorationColor: AppColors.darkGreen),),
+                  TextSpan(text: 'rhythmic awakening’s speaker system',style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Theme.of(context).primaryColor,decoration: TextDecoration.underline,decorationColor: AppColors.darkGreen),),
                TextSpan(text: ' box for access to this app')
                 ]),)),
 

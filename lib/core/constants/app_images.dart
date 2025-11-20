@@ -13,6 +13,8 @@ sealed class AppImages{
   static const itunes="assets/images/shared/itunes.svg";
   static const yt="assets/images/shared/yt.svg";
   static const pandora="assets/images/shared/pandora_col.svg";
+  static const videoSquare="assets/images/shared/video-square.svg";
+
 
   //NAVBAR
 static const selAlarm="assets/images/shared/sel_alarm.svg";
@@ -34,8 +36,7 @@ static const unSelAlarm="assets/images/shared/un_alarm-clock.svg";
   static const musicPlaylist="assets/images/features/alarm/music-playlist.svg";
   static const octagon="assets/images/features/alarm/octagon.svg";
   static const edit="assets/images/features/alarm/edit.svg";
-//Timer
-  static const videoSquare="assets/images/features/timer/video-square.svg";
+
   //Profile
   static const logout="assets/images/features/profile/logout.svg";
   static const user="assets/images/features/profile/Avatar.png";
@@ -49,5 +50,8 @@ static const unSelAlarm="assets/images/shared/un_alarm-clock.svg";
   static const uploadTodo="assets/images/features/todo/up_todo.svg";
   static const undoArrow="assets/images/features/todo/undo_arrow.svg";
   static const redoArrow="assets/images/features/todo/redo_arrow.svg";
+
+  //Timer
+  static const refreshIcon="assets/images/features/timer/refresh.svg";
 
 }

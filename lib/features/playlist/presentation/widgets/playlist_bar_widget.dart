@@ -12,7 +12,7 @@ final String leading;
   Widget build(BuildContext context) {
     return  Container(
       margin: EdgeInsets.symmetric(vertical: 10.h),
-      padding: EdgeInsets.symmetric(horizontal: 8.w,vertical: 11.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 11.h),
       decoration: BoxDecoration(
           color: Colors.white.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(8.r)
@@ -23,7 +23,10 @@ final String leading;
           SizedBox(width: 8.w,),
           SvgPicture.asset(img),
           SizedBox(width: 8.w,),
-          Text(title,style: Theme.of(context).textTheme.titleMedium,)
+          Text(title,style: Theme.of(context).textTheme.titleMedium,),
+          const Spacer(),
+          SvgPicture.asset(AppImages.videoSquare,height: 24.h,width: 24.w,fit: BoxFit.cover,),
+
         ],),);
   }
 }

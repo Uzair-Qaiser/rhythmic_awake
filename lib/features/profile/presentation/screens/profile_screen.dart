@@ -92,7 +92,7 @@ class ProfileScreen extends StatelessWidget {
                   Text('Join our referral affiliate program',style: Theme.of(context).textTheme.titleSmall,),
                 ],),
 
-               SizedBox(height: 37.h,),
+               SizedBox(height: 137.h,),
                      ],
             ),
           ),

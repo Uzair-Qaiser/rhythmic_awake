@@ -94,6 +94,28 @@ class AddAlarmScreen extends StatelessWidget {
                         SizedBox(width: 8.w,),
                         Text('Stored Audio Files',style: Theme.of(context).textTheme.titleMedium,)
                       ],),),
+                  SizedBox(height: 24.h,),
+                  Divider(color: AppColors.whiteColor.withValues(alpha: 0.6),height: 0,),
+                  SizedBox(height: 24.h,),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 13.h),
+                    decoration: BoxDecoration(color: AppColors.transparentColor,borderRadius: BorderRadius.circular(8.r)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Snooze Type",style: Theme.of(context).textTheme.titleMedium,),
+                        Icon(Icons.arrow_drop_down_sharp,color: AppColors.whiteColor,size: 15,)
+                      ],),),
+                  SizedBox(height: 24.h,),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 13.h),
+                    decoration: BoxDecoration(color: AppColors.transparentColor,borderRadius: BorderRadius.circular(8.r)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Snooze Interval",style: Theme.of(context).textTheme.titleMedium,),
+                        Icon(Icons.arrow_drop_down_sharp,color: AppColors.whiteColor,size: 15,)
+                      ],),),
                   SizedBox(height: 34.h,),
 
                   Row(spacing: 8.w,
@@ -116,7 +138,7 @@ class AddAlarmScreen extends StatelessWidget {
                     height:50.h,
                       width: ScreenUtil().screenWidth,
                       text: "Create Alarm", onTap: (){}),
-                  SizedBox(height: 5.h,),
+                  SizedBox(height: MediaQuery.of(context).padding.bottom+5.h),
                 ],
               ),
             ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:rhythmic_awake/core/theme/app_colors.dart';
+import 'package:rhythmic_awake/shared/widgets/outlined_btn.dart';
 import '../../../../core/constants/app_images.dart';
 import '../../../../shared/widgets/alarm_card.dart';
 import '../../../../shared/widgets/small_btn.dart';
@@ -14,7 +16,7 @@ class AlarmTabWidget extends StatefulWidget {
 
 class _AlarmTabWidgetState extends State<AlarmTabWidget> {
   List<bool> alarmStates = [true, true, false, true];
-
+bool isSelected =false;
   @override
   Widget build(BuildContext context) {
     return Column(children: [
@@ -22,10 +24,30 @@ class _AlarmTabWidgetState extends State<AlarmTabWidget> {
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            "Alarms",
-            style: Theme.of(context).textTheme.headlineLarge,
+          Row(
+            children: [
+              Checkbox(
+                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  visualDensity: VisualDensity.compact,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.r)),
+                side: BorderSide(color: AppColors.whiteColor),
+                  value: isSelected, onChanged: (val){setState(() {
+                isSelected=val!;
+              });}),
+              SizedBox(width: 12.w,),
+              Text(
+                "Alarms",
+                style: Theme.of(context).textTheme.headlineLarge,
+              ),
+            ],
           ),
+          const Spacer(),
+         Container(
+           decoration: BoxDecoration(borderRadius: BorderRadius.circular(6.r),border: Border.all(color: AppColors.whiteColor)),
+           padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 8.h),
+           child: Text("Set Alarm",style: Theme.of(context).textTheme.titleSmall,),
+         ),
+          SizedBox(width: 16.w,),
           SmallBtn(func: () {
             context.pushNamed(AlarmRoutes.addAlarm);
           }, text: 'New Alarm'),

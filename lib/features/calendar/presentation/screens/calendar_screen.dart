@@ -17,7 +17,12 @@ class CustomCalendar extends StatefulWidget {
 class _CustomCalendarState extends State<CustomCalendar> {
   DateTime _currentMonth = DateTime.now();
   DateTime? _selectedDate;
-
+  int _selectedIndex=0;
+  _changeIndex(int val){
+    _selectedIndex=val;
+    setState(() {
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return AppBackground(
@@ -45,7 +50,43 @@ class _CustomCalendarState extends State<CustomCalendar> {
                   ),
                 ],
               ),
-              SizedBox(height: 43.h),
+              SizedBox(height: 22.h),
+              Row(mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 4.w,vertical: 4.h),
+                    decoration: BoxDecoration(color: AppColors.transparentColor,borderRadius: BorderRadius.circular(6.r)),
+                    child: Row(
+                      children: [
+                      GestureDetector(
+                        onTap:(){
+                          _changeIndex(0);
+                        },
+                        child: Container(
+                          height: 21.h,
+                          decoration: BoxDecoration(
+                            color: _selectedIndex==0?AppColors.whiteColor:null,
+                            borderRadius:  BorderRadius.circular(6.r),
+                          ),
+                          padding: EdgeInsets.symmetric(horizontal: 8.w,vertical: 4.h,),
+                          child: Text('General View',style: Theme.of(context).textTheme.titleSmall?.copyWith(color: _selectedIndex==0?AppColors.blueColor:null),),),
+                      ),
+                      GestureDetector(  onTap:(){
+                        _changeIndex(1);
+                      },
+                        child: Container(
+                          height: 21.h,
+                          decoration: BoxDecoration(
+                            color: _selectedIndex==1?AppColors.whiteColor:null,
+                            borderRadius:  BorderRadius.circular(6.r),
+                          ),
+                          padding: EdgeInsets.symmetric(horizontal: 8.w,vertical: 4.h,),
+                          child: Text('Alarm View',style: Theme.of(context).textTheme.titleSmall?.copyWith(color: _selectedIndex==1?AppColors.blueColor:null),),),
+                      )
+                    ],),),
+                ],
+              ),
+              SizedBox(height: 22.h),
 
               Expanded(
                 child: _buildCalendarWithListView(),
@@ -89,8 +130,6 @@ class _CustomCalendarState extends State<CustomCalendar> {
     final int totalWeeks = (totalDays / 5).ceil(); // 5 days per week
 
     return ListView.builder(
-
-      physics: const NeverScrollableScrollPhysics(),
       itemCount: totalWeeks,
       itemBuilder: (context, weekIndex) {
         return Container(
@@ -101,7 +140,7 @@ class _CustomCalendarState extends State<CustomCalendar> {
               if (absoluteDay <= startingOffset || dayOfMonth > daysInMonth) {
                 return Expanded(
                   child: Container(
-                    height: 90.h,
+                    height: 95.h,
                     width: 70.w,
                     padding: EdgeInsets.symmetric(horizontal: 2.17.w,vertical: 2.17.h),
                     decoration: BoxDecoration(
@@ -124,7 +163,6 @@ class _CustomCalendarState extends State<CustomCalendar> {
                     context.pushNamed(CalendarRoutes.calendarEvents);
                   },
                   child: Container(
-                    height: 90.h,
                     width: 70.w,
                     padding: EdgeInsets.symmetric(horizontal: 2.17.w,vertical: 2.17.h),
                     decoration: BoxDecoration(
@@ -135,37 +173,62 @@ class _CustomCalendarState extends State<CustomCalendar> {
                     ),
                     child: Column(
                       children: [
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: Text(
-                            dayOfMonth.toString(),
-                            style: Theme.of(context).textTheme.bodySmall
-                          ),
-                        ),
-                        const Spacer(),
-                       Row(children: [
-                         Icon(Icons.circle,color: AppColors.greyColor,size: 12.sp,),
-                         SizedBox(width: 2.43.w,),
-                         Icon(Icons.circle,color: AppColors.darkGreen,size: 12.sp,),
-                       ],),
-                        SizedBox(height: 4.h,),
-                        Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(height: 22.h,
-                            padding: EdgeInsets.symmetric(horizontal: 2.w,vertical: 2.h),
-                            decoration: BoxDecoration(color: AppColors.transparentColor,borderRadius: BorderRadius.circular(2.r)),child: Column(mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                              Text('To Do List',style: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 5.sp),),
-                              Text('Created',style: Theme.of(context).textTheme.displayMedium?.copyWith(fontSize: 5.sp,color: AppColors.darkGreen),),
-                              ],),),
-                            Container(height: 22.h,
-                            decoration: BoxDecoration(color: AppColors.transparentColor,borderRadius: BorderRadius.circular(2.r)),child: Column(mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                              Text('To Do List',style: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 5.sp),),
-                              Text('Created',style: Theme.of(context).textTheme.displayMedium?.copyWith(fontSize: 5.sp,color: AppColors.darkGreen),),
-                              ],),),
+                            Text(
+                              _getDayName(currentDate),
+                              style: Theme.of(context).textTheme.displayMedium!.copyWith(fontSize: 10.sp)
+                            ),
+                            Text(
+                                dayOfMonth.toString(),
+                                style: Theme.of(context).textTheme.displayMedium!.copyWith(fontSize: 10.sp)
+                            ),
                           ],
                         ),
+                        SizedBox(height: 10.65.h,),
+                      if(_selectedIndex==0)...[
+                  Row(children: [
+                    Icon(Icons.circle,color: AppColors.greyColor,size: 12.sp,),
+                    SizedBox(width: 2.43.w,),
+                    Icon(Icons.circle,color: AppColors.darkGreen,size: 12.sp,),
+                  ],),
+                  SizedBox(height: 4.h,),
+                  Column( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(height: 26.h,
+                        width: double.infinity,
+                        padding: EdgeInsets.symmetric(horizontal: 2.w,vertical: 2.h),
+                        decoration: BoxDecoration(color: AppColors.transparentColor,borderRadius: BorderRadius.circular(2.r)),child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('To Do List',style: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 5.sp),),
+                            Text('Created',style: Theme.of(context).textTheme.displayMedium?.copyWith(fontSize: 5.sp,color: AppColors.darkGreen),),
+                          ],),),
+                      SizedBox(height: 2.h,),
+                      Container(height: 26.h,
+                        width: double.infinity,
+                        decoration: BoxDecoration(color: AppColors.transparentColor,borderRadius: BorderRadius.circular(2.r)),child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('To Do List',style: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 5.sp),),
+                            Text('Created',style: Theme.of(context).textTheme.displayMedium?.copyWith(fontSize: 5.sp,color: AppColors.darkGreen),),
+                          ],),),
+                    ],
+                  ),
+                  ],
+                        if(_selectedIndex==1)...[
+
+                          SizedBox(height: 4.h,),
+                          Column( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            spacing: 4.h,
+                            children: [
+                           Text("06 : 00 am",style: Theme.of(context).textTheme.bodySmall?.copyWith(color: AppColors.darkGreen,fontSize: 7.sp),),
+                           Text("06 : 00 am",style: Theme.of(context).textTheme.bodySmall?.copyWith(color: AppColors.darkGreen,fontSize: 7.sp),),
+                           Text("06 : 00 am",style: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 7.sp),),
+                           Text("06 : 00 am",style: Theme.of(context).textTheme.bodySmall?.copyWith(color: AppColors.darkGreen,fontSize: 7.sp),),
+                              Text("06 : 00 am",style: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 7.sp),),
+
+                            ],
+                          ),
+                        ]
                       ],
                     ),
                   ),
@@ -187,6 +250,14 @@ class _CustomCalendarState extends State<CustomCalendar> {
       'July', 'August', 'September', 'October', 'November', 'December'
     ];
     return months[month - 1];
+  }
+
+  String _getDayName(DateTime date) {
+    const List<String> days = [
+      'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'
+    ];
+    // weekday returns 1 (Monday) to 7 (Sunday)
+    return days[date.weekday - 1];
   }
 
   void _previousMonth() {

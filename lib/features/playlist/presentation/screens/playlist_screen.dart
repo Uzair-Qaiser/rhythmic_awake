@@ -14,7 +14,7 @@ class PlaylistScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBackground(
       child: SafeArea(
-        bottom: false,
+
         child: Padding(
           padding:  EdgeInsets.symmetric(horizontal: 24.w),
           child: SingleChildScrollView(

@@ -23,7 +23,7 @@ class _AlarmScreenState extends State<AlarmScreen> {
   Widget build(BuildContext context) {
     return AppBackground(
       child: SafeArea(
-        bottom: false,
+        bottom: true,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: SingleChildScrollView(

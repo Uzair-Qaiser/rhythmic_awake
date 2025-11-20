@@ -13,15 +13,9 @@ class LoginTopSection extends StatelessWidget {
     return Column(children: [
       SvgPicture.asset(AppImages.appIcon, width: 100.w, height: 92.h),
       SizedBox(height: 22.h),
-      GradientText(
+      Text(
         'Sign In to Your Account',
-        style: Theme.of(context).textTheme.headlineLarge!,
-        gradient: LinearGradient(
-          colors: [AppColors.whiteColor, AppColors.blueColor2],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          stops: [0.28, 1],
-        ),
+        style: Theme.of(context).textTheme.headlineLarge
       ),
       SizedBox(height: 16.h),
       Text(
